@@ -7,6 +7,6 @@ RUN tar zxvf nginx-1.6.2.tar.gz
 RUN mkdir -p /usr/local/nginx  
 RUN cd nginx-1.6.2 && ./configure --prefix=/usr/local/nginx --user=nginx --group=nginx --with-http_stub_status_module && make && make install  
 RUN ln -s /usr/local/nginx/sbin/* /usr/local/sbin/  
-COPY ./html/ /usr/local/nginx/html/
+COPY ./ /usr/local/nginx/html/
 expose 80  
 CMD ["nginx"]
